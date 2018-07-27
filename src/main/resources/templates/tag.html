@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>A Single Tag</title>
+</head>
+<body>
+
+	<div th:each="tag: ${tagsModel}">
+		<h2 th:text="${tag.meal}"></h2>
+
+		<div th:each="recipe: ${tag.recipes}">
+			<a th:href="@{/recipe(id=${recipe.id})}" th:text="${recipe.recipeName}"></a>
+		</div>
+
+	</div>
+
+<a href="http://localhost:8080/show-tags">Back to Tags View</a>
+
+</body>
+</html>

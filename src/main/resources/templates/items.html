@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.thymeleaf.org">
+<head>
+	<title>All Items</title>
+</head>
+<body>
+	<h1>All Items</h1>
+
+	<div th:each="item: ${itemsModel}">
+		<h2>
+			<a th:href="@{/item(id=${item.id})}" th:text="${item.itemName}"></a>
+		</h2>
+	</div>
+
+</body>
+</html>

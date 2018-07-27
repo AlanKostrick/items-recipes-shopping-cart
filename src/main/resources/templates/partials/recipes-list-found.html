@@ -1,0 +1,9 @@
+
+<ul>
+	<p th:if="${recipesModel.size() ==0}">We do not have a recipe for this search.<p>
+	<p th:if="${recipesModel.size() !=0}">Here are our recipes:<p>
+	<li th:each="recipe: ${recipesModel}">
+			  <a th:href="@{/recipe(id=${recipe.id})}" th:text="${recipe.recipeName}"></a></li>
+</ul>
+
+		

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>A Single Recipe</title>
+</head>
+<body>
+
+	<div th:each="recipe: ${recipesModel}">
+		<h2 th:text="${recipe.recipeName}"></h2>
+		<img id="" th:src = "${recipe.image}">
+		<p th:text="${recipe.instructions}"></p>
+
+		<div th:each="tag: ${recipe.tag}">
+			<a th:href="@{/tag(id=${tag.id})}" th:text="${recipe.tag.meal}"></a>
+		</div>
+
+		<div th:each="item: ${recipe.items}">
+			<a th:href="@{/item(id=${item.id})}" th:text="${item.itemName}"></a>
+		</div>
+		
+		
+	</div>
+
+	<a href="http://localhost:8080/show-recipes">Back to Recipes View</a>
+
+</body>
+</html>
